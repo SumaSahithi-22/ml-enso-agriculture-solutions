@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suitable Crops during El Niño</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f7;
+    text-align: center;
+}
+
+header {
+    background: #0056b3;
+    color: white;
+    padding: 12px 0;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+header h1{
+    font-size: 22px;
+    margin: 0;
+    
+    
+    
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.region {
+    background: white;
+    width: 90%;
+    max-width: 850px;
+    margin: 25px 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.crop-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.crop {
+    width: 180px;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.crop img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.crop:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 12px 0;
+    background: #0056b3;
+    color: white;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suitable Crops during El Niño</h1>
+    </header>
+    <main>
+        <section class="region">
+            <h2>Peru & Ecuador (Heavy Rains)</h2>
+            <h3>Pre-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Potatoes.jpg') }}" alt="Potatoes">
+                    <p>Potatoes</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/maize.jpg') }}" alt="Maize">
+                    <p>Maize</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/quinoa.jpg') }}" alt="Quinoa">
+                    <p>Quinoa</p>
+                </div>
+            </div>
+            <h3>Post-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Rice.jpg') }}" alt="Rice">
+                    <p>Rice</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/varieties of beans.jpg') }}" alt="Beans">
+                    <p>Varieties of Beans</p>
+                </div>
+            </div>
+        </section>
+        <section class="region">
+            <h2>Southern U.S. (Heavy Rains)</h2>
+            <h3>Pre-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/cotton.jpg') }}" alt="Cotton">
+                    <p>Cotton</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/soybeans.jpg') }}" alt="Soybeans">
+                    <p>Soybeans</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/corn.jpg') }}" alt="Corn">
+                    <p>Corn</p>
+                </div>
+            </div>
+            <h3>Post-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Sorghum.jpg') }}" alt="Sorghum">
+                    <p>Sorghum</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/millet.jpg') }}" alt="Millet">
+                    <p>Millet</p>
+                </div>
+            </div>
+        </section>
+        <section class="region">
+            <h2>Australia & Southeast Asia (Drought)</h2>
+            <h3>Pre-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/wheat.jpg') }}" alt="Wheat">
+                    <p>Wheat</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/barley.jpg') }}" alt="Barley">
+                    <p>Barley</p>
+                </div>
+            </div>
+            <h3>Post-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Sorghum.jpg') }}" alt="Sorghum">
+                    <p>Sorghum</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/legumes.jpg') }}" alt="Legumes">
+                    <p>Legumes</p>
+                </div>
+            </div>
+        </section>
+        <section class="region">
+            <h2>Southern Africa (Drought)</h2>
+            <h3>Pre-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/maize.jpg') }}" alt="Maize">
+                    <p>Maize</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Cassava.jpg') }}" alt="Cassava">
+                    <p>Cassava</p>
+                </div>
+            </div>
+            <h3>Post-event Crops</h3>
+            <div class="crop-container">
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/Sorghum.jpg') }}" alt="Sorghum">
+                    <p>Sorghum</p>
+                </div>
+                <div class="crop">
+                    <img src="{{ url_for('static', filename='images/millet.jpg') }}" alt="Millet">
+                    <p>Millet</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Suitable Crops Information</p>
+    </footer>
+</body>
+</html>

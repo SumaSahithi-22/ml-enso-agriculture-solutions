@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Niño Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        .button1 {
+            position: absolute;
+            top: 20px;
+            right: 150px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button2 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>El Niño</h1>
+ 
+        <a href="elnino_agr">
+            <button class="button1">Agricultural Solutions</button>
+        </a>
+
+        <a href="elnino_history">
+            <button class="button2">Historical Data</button>
+        </a>
+
+    <div class="container"> 
+        <img src="{{ url_for('static', filename='images/elnino.jpg') }}"  alt="El Niño Map" class="image">
+    </div>
+
+</body>
+</html>

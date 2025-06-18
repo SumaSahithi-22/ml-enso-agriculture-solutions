@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSO Graph Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h2, h3 {
+            color: #333;
+        }
+        img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .content {
+            text-align: left;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Oceanic Niño Index (ONI) Prediction and Forecast</h2>
+        <img src="{{ url_for('static', filename='images/fvp.png') }}" alt="Prediction Graph">
+        <div class="content">
+            <h3>Description:</h3>
+            <p>The graph illustrates the Oceanic Niño Index (ONI) trends over time, spanning from 2017 to 2025, with actual, predicted, and forecasted values. The ONI is a key measure used to monitor El Niño and La Niña events, which impact global climate patterns.</p>
+            
+            <h3>Legend:</h3>
+            <ul>
+                <li><strong>Black Line:</strong> Actual recorded ONI values.</li>
+                <li><strong>Blue Line:</strong> Predicted values based on our LSTM model, closely following the actual trend but with slight deviations.</li>
+                <li><strong>Red Line:</strong> Forecasted ONI for late 2024 to 2025, showing a downward trend.</li>
+            </ul>
+            
+            <h3>Observations:</h3>
+            <ul>
+                <li>The ONI fluctuates over time, showing periodic rises and falls, indicative of El Niño (positive values) and La Niña (negative values) phases.</li>
+                <li>Around 2019-2020, a notable dip is observed, aligning with a La Niña phase, followed by a sharp decline in 2021.</li>
+                <li>A strong El Niño event is visible in 2023-2024, where the ONI peaks above 1.5.</li>
+                <li>The forecast suggests a declining ONI into 2025, indicating a transition away from El Niño conditions.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

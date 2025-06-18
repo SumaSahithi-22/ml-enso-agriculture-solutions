@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSO Graph Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h2, h3 {
+            color: #333;
+        }
+        img {
+            width: 100%;
+            max-width: 1100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .content {
+            text-align: left;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ENSO Graph Analysis</h2>
+        <p>Below is the graphical representation of ENSO trends over time.</p>
+        <img src="{{ url_for('static', filename='images/graph.png') }}" alt="ENSO Graph">
+        <div class="content">
+            <h3>Description:</h3>
+            <ul>The image shows a graph titled "ENSO and ONI Relation". The graph represents the relationship between the El Niño-Southern Oscillation (ENSO) and the Oceanic Niño Index (ONI). The ONI is a measure of sea surface temperature anomalies in the central and eastern tropical Pacific Ocean.</ul>
+            <ul>
+                <li>El Niño is characterized by warmer-than-average sea surface temperatures in the central and eastern Pacific Ocean.</li>
+                <li>La Niña is characterized by cooler-than-average sea surface temperatures.</li>
+                <li>The graph shows that there have been both El Niño and La Niña events over the past several decades.</li>
+                <li>The ONI has fluctuated significantly over time, being above 0.5 for El Niño conditions and below -0.5 for La Niña conditions.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

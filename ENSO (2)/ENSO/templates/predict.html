@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSO Prediction Result</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
+        h1 { color: #0077b6; margin-bottom: 20px; }
+        .container { max-width: 900px; margin: 20px auto; padding: 30px; background-color: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .navbar { background-color: #0077b6; padding: 10px 20px; text-align: center; border-radius: 5px; position: sticky; top: 0; }
+        .navbar a { color: white; text-decoration: none; padding: 12px 15px; margin: 5px; display: inline-block; border-radius: 5px; }
+        .navbar a:hover { background-color: #005f87; }
+        .dropdown { display: inline-block; position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0077b6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: white; padding: 12px 15px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #005f87; }
+        .event { font-size: 24px; font-weight: bold; color: #0096c7; text-align: center; margin-top: 20px; }
+        .btn { background-color: #0096c7; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; text-align: center; margin-top: 30px; display: inline-block; text-decoration: none; margin-right: 15px;}
+        .btn:hover { background-color: #005f87; }
+        .content { margin-top: 40px; line-height: 1.6; color: #333; }
+        .content h3 { color: #0096c7; font-size: 22px; margin-bottom: 15px; text-align: left; }
+        .content p { font-size: 18px; text-align: justify; margin-bottom: 20px; }
+        .content .section { background-color: #f9f9f9; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .section p { font-size: 16px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="#">ENSO Analysis ▼</a>
+            <div class="dropdown-content">
+                <a href="elnino_analysis">El Niño</a>
+                <a href="lanina_analysis">La Niña</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">History of past events ▼</a>
+            <div class="dropdown-content">
+                <a href="elnino_history">El Niño</a>
+                <a href="lanina_history">La Niña</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Agriculture solutions ▼</a>
+            <div class="dropdown-content">
+                <a href="elnino_agr">El Niño</a>
+                <a href="lanina_agr">La Niña</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>ENSO Prediction Result</h1>
+        <p class="event">Predicted Event: {{ event }}</p>
+        <p><strong>Expected Year:</strong> {{ year }}</p>
+        <p><strong>Expected Months:</strong> {{ month_range }}</p>
+        <p><strong>Confidence Level:</strong> {{ confidence }}%</p>
+        <div>
+            <a href="graph" class="btn" >Graphical Analysis</a>
+            <a href="forecast" class="btn" > Prediction Vs Forecast</a>
+        </div>
+
+        {% if event == "El Niño" %}
+        <div class="content">
+            <div class="section">
+                <h3>About El Niño</h3>
+                <p>El Niño is a climate phenomenon caused by the warming of the surface waters in the eastern and central Pacific Ocean. This disruption in the ocean currents can trigger severe weather patterns across the globe. Areas that typically experience dry conditions may see even more intense droughts, while regions prone to heavy rainfall may face flooding. El Niño can disrupt agriculture, increase wildfire risks, and strain water resources. During El Niño events, temperatures tend to rise, and heatwaves become more frequent and severe. It also affects the global atmospheric circulation, resulting in unexpected weather events that challenge traditional weather patterns.</p>
+            </div>
+
+            <div class="section">
+                <h3>Impacts</h3>
+                <p>The impacts of El Niño are diverse, and they vary depending on the region. Countries in Southeast Asia, such as Indonesia and the Philippines, can experience prolonged periods of drought, which threaten food and water supplies. In contrast, some regions, like the western coast of the Americas, may face increased rainfall, leading to flooding and landslides. These disruptions can lead to significant loss of crops, especially in areas dependent on consistent rainfall for farming. In addition, higher temperatures can increase the risk of wildfires, further exacerbating the challenges of drought. The farming community needs to prepare for these weather extremes by investing in better irrigation systems and drought-resistant crops to safeguard food production.</p>
+            </div>
+
+            <div class="section">
+                <h3>Agriculture & Health Recommendations</h3>
+                <p>Farmers should focus on improving irrigation systems and water storage to counter the potential water shortages. Drought-resistant crops that require less water should be prioritized to ensure a stable food supply. Additionally, it is important to monitor soil moisture and adjust irrigation schedules to conserve water. Health risks are also associated with El Niño, especially heat-related illnesses, so communities should be ready with cooling centers and access to hydration. Vulnerable populations, especially the elderly and those with pre-existing conditions, should be closely monitored for signs of heat stress. By proactively planning for these challenges, regions affected by El Niño can better adapt to its impacts.</p>
+            </div>
+
+            <div class="section">
+                <h3>Other Measures</h3>
+                <p>It is crucial to develop early warning systems that provide real-time information about El Niño's development and potential impacts. Governments should encourage the use of weather-resistant infrastructure and provide resources to help local communities prepare for extreme heat and drought. Farmers should also consider diversifying their crops to minimize losses in case some crops fail due to unfavorable weather conditions.</p>
+            </div>
+        </div>
+
+        {% elif event == "La Niña" %}
+        <div class="content">
+            <div class="section">
+                <h3>About La Niña</h3>
+                <p>La Niña is the opposite phase of the El Niño phenomenon. It occurs when the surface waters of the central and eastern Pacific Ocean cool significantly, leading to shifts in atmospheric pressure and ocean currents. The impacts of La Niña are often associated with cooler and wetter conditions in some regions, while others may experience dry spells. These changes in weather patterns can have serious implications for agriculture, water resources, and public health. La Niña events typically result in more intense rainfall, which can lead to flooding, landslides, and increased storm activity. The strength of La Niña events can vary, but their effects are still felt globally, especially in regions that are already prone to extreme weather events.</p>
+            </div>
+
+            <div class="section">
+                <h3>Impacts</h3>
+                <p>Regions that experience regular rainfall may face the risk of flooding during a La Niña event. In the United States, for example, the southeastern states and parts of the Gulf Coast often experience more frequent and intense hurricanes. Similarly, countries like India and parts of Southeast Asia may see an increase in monsoon rains, leading to a higher likelihood of flooding and infrastructure damage. La Niña's influence on the weather can also cause disruptions to crop production due to excessive moisture. Farmers may struggle with the increased risks of fungal diseases and soil erosion, which can undermine the stability of food systems. Additionally, La Niña often brings cooler conditions to regions that are used to warmer temperatures, further complicating the agricultural landscape.</p>
+            </div>
+
+            <div class="section">
+                <h3>Agriculture & Health Recommendations</h3>
+                <p>To prepare for the challenges posed by La Niña, farmers should focus on improving drainage systems to prevent waterlogging and soil erosion. Crop protection strategies, such as using fungicides and adjusting planting schedules, will help mitigate the risks of fungal diseases and crop loss. Excess moisture can also lead to mold and mildew growth, which may compromise crop quality. Health-wise, the increased humidity during La Niña conditions can promote respiratory diseases, so communities should prepare for potential health outbreaks by ensuring access to medical care and promoting hygiene practices. The importance of flood preparedness cannot be overstated, as the increased risk of flooding can lead to widespread disruption, particularly in coastal areas.</p>
+            </div>
+
+            <div class="section">
+                <h3>Other Measures</h3>
+                <p>Strong flood control measures, including the construction of levees and dams, will help mitigate the impacts of excessive rainfall. Monitoring weather patterns closely and ensuring effective emergency response plans are in place will allow affected communities to respond to La Niña events in a timely manner. Local governments and farmers should collaborate on finding sustainable practices that can help communities adapt to La Niña's challenges, such as improving floodplain management and investing in water-storage technologies.</p>
+            </div>
+        </div>
+
+        {% else %}
+        <div class="content">
+            <div class="section">
+                <h3>Neutral ENSO Conditions</h3>
+                <p>Neutral ENSO conditions occur when there is no significant warming or cooling of the Pacific Ocean's surface temperatures. In this scenario, the climate remains relatively stable, and typical seasonal weather patterns are observed. Although neutral conditions do not bring about extreme weather, they still require monitoring as they can indicate subtle shifts in the atmosphere. While this phase does not usually cause drastic disruptions, small variations in temperature and precipitation may lead to localized weather events. For farmers, this is often a time of regular agricultural cycles, with seasonal fluctuations that do not pose major risks but still require attention to ensure proper planning and management of resources.</p>
+            </div>
+
+            <div class="section">
+                <h3>Impacts</h3>
+                <p>Neutral conditions generally bring stable weather, with expected seasonal variations in temperature and precipitation. However, it is important to stay alert to potential shifts in the weather that could arise from external factors or minor atmospheric disturbances. For agriculture, this means that crop cycles will follow their regular rhythms, but farmers should still remain prepared for slight variations in temperature and rainfall. There is no immediate risk of extreme weather events, but small changes can still affect crop growth and water availability. Preparedness for any eventuality, including localized weather events, is key to ensuring the continued success of agricultural activities during this phase.</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
